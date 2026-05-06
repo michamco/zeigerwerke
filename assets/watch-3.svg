@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="600" height="800">
+  <defs>
+    <radialGradient id="caseGrad3" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#fffaf0"/>
+      <stop offset="55%" stop-color="#d4d4d4"/>
+      <stop offset="100%" stop-color="#7a7a7a"/>
+    </radialGradient>
+    <radialGradient id="dialGrad3" cx="50%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#1f1f24"/>
+      <stop offset="60%" stop-color="#0d0d12"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+    <linearGradient id="strap3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a1a"/>
+      <stop offset="50%" stop-color="#2a2a2a"/>
+      <stop offset="100%" stop-color="#0d0d0d"/>
+    </linearGradient>
+    <pattern id="croco3" x="0" y="0" width="14" height="20" patternUnits="userSpaceOnUse">
+      <rect width="14" height="20" fill="#1a1a1a"/>
+      <ellipse cx="7" cy="10" rx="6" ry="9" fill="#0d0d0d" stroke="#3a3a3a" stroke-width="0.4"/>
+    </pattern>
+    <filter id="softShadow3" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+      <feOffset dx="0" dy="8" result="off"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.55"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Strap top crocodile -->
+  <path d="M230 40 Q230 80 250 130 L350 130 Q370 80 370 40 Z" fill="url(#croco3)"/>
+  <line x1="248" y1="60" x2="352" y2="60" stroke="#fff" stroke-width="0.5" stroke-dasharray="3 4" opacity="0.18"/>
+  <line x1="248" y1="100" x2="352" y2="100" stroke="#fff" stroke-width="0.5" stroke-dasharray="3 4" opacity="0.18"/>
+
+  <!-- Strap bottom crocodile -->
+  <path d="M230 760 Q230 720 250 670 L350 670 Q370 720 370 760 Z" fill="url(#croco3)"/>
+  <line x1="248" y1="740" x2="352" y2="740" stroke="#fff" stroke-width="0.5" stroke-dasharray="3 4" opacity="0.18"/>
+  <line x1="248" y1="700" x2="352" y2="700" stroke="#fff" stroke-width="0.5" stroke-dasharray="3 4" opacity="0.18"/>
+
+  <!-- Lugs - sleek polished -->
+  <path d="M225 130 Q220 165 240 175 L260 168 L255 130 Z" fill="url(#caseGrad3)"/>
+  <path d="M375 130 Q380 165 360 175 L340 168 L345 130 Z" fill="url(#caseGrad3)"/>
+  <path d="M225 670 Q220 635 240 625 L260 632 L255 670 Z" fill="url(#caseGrad3)"/>
+  <path d="M375 670 Q380 635 360 625 L340 632 L345 670 Z" fill="url(#caseGrad3)"/>
+
+  <!-- Crown -->
+  <rect x="430" y="385" width="20" height="30" rx="2" fill="url(#caseGrad3)"/>
+  <rect x="430" y="389" width="20" height="2" fill="#7a7a7a" opacity="0.5"/>
+  <rect x="430" y="396" width="20" height="2" fill="#7a7a7a" opacity="0.5"/>
+  <rect x="430" y="403" width="20" height="2" fill="#7a7a7a" opacity="0.5"/>
+
+  <!-- Case -->
+  <circle cx="300" cy="400" r="170" fill="url(#caseGrad3)" filter="url(#softShadow3)"/>
+  <circle cx="300" cy="400" r="155" fill="none" stroke="#666" stroke-width="0.6"/>
+
+  <!-- Dial with subtle texture -->
+  <circle cx="300" cy="400" r="148" fill="url(#dialGrad3)"/>
+  <circle cx="300" cy="400" r="148" fill="url(#dialGrad3)" opacity="0.5"/>
+
+  <!-- Concentric circles -->
+  <g fill="none" stroke="#1f1f24" stroke-width="0.4" opacity="0.7">
+    <circle cx="300" cy="400" r="138"/>
+    <circle cx="300" cy="400" r="125"/>
+    <circle cx="300" cy="400" r="112"/>
+  </g>
+
+  <!-- Hour markers - long thin baton indices in champagne gold -->
+  <g fill="#c9a96a">
+    <rect x="298" y="266" width="4" height="30" rx="0.5"/>
+    <rect x="395" y="398" width="30" height="4" rx="0.5"/>
+    <rect x="298" y="504" width="4" height="30" rx="0.5"/>
+    <rect x="175" y="398" width="30" height="4" rx="0.5"/>
+  </g>
+  <g fill="#c9a96a" opacity="0.85">
+    <rect x="298" y="276" width="4" height="14" transform="rotate(30 300 400)"/>
+    <rect x="298" y="276" width="4" height="14" transform="rotate(60 300 400)"/>
+    <rect x="298" y="276" width="4" height="14" transform="rotate(120 300 400)"/>
+    <rect x="298" y="276" width="4" height="14" transform="rotate(150 300 400)"/>
+    <rect x="298" y="276" width="4" height="14" transform="rotate(210 300 400)"/>
+    <rect x="298" y="276" width="4" height="14" transform="rotate(240 300 400)"/>
+    <rect x="298" y="276" width="4" height="14" transform="rotate(300 300 400)"/>
+    <rect x="298" y="276" width="4" height="14" transform="rotate(330 300 400)"/>
+  </g>
+
+  <!-- Minute track -->
+  <g stroke="#c9a96a" stroke-width="0.5" opacity="0.7">
+    <circle cx="300" cy="400" r="138" fill="none" stroke-dasharray="0.8 5"/>
+  </g>
+
+  <!-- Brand -->
+  <text x="300" y="345" font-family="Cormorant Garamond, serif" font-style="italic" font-weight="400" font-size="15" fill="#c9a96a" text-anchor="middle" letter-spacing="1.5">Zeigerwerke</text>
+  <text x="300" y="362" font-family="Inter Tight, sans-serif" font-size="5" fill="#c9a96a" text-anchor="middle" letter-spacing="3" opacity="0.7">L'HEURE NOIRE · ÉDITION</text>
+
+  <!-- Moon phase indicator at 6 -->
+  <circle cx="300" cy="465" r="22" fill="#0a1933" stroke="#c9a96a" stroke-width="0.6"/>
+  <circle cx="296" cy="463" r="9" fill="#f0e6c8"/>
+  <circle cx="293" cy="461" r="2" fill="#0a1933" opacity="0.3"/>
+  <circle cx="300" cy="465" r="0.6" fill="#c9a96a"/>
+  <circle cx="285" cy="455" r="0.6" fill="#c9a96a"/>
+  <circle cx="315" cy="455" r="0.6" fill="#c9a96a"/>
+
+  <!-- Hands - dauphine style -->
+  <g>
+    <polygon points="300,400 294,310 300,295 306,310" fill="#c9a96a"/>
+    <polygon points="300,400 296,310 300,300 304,310" fill="#fff3d8" opacity="0.4"/>
+  </g>
+  <g transform="rotate(70 300 400)">
+    <polygon points="300,400 295,265 300,250 305,265" fill="#c9a96a"/>
+  </g>
+  <!-- thin seconds hand -->
+  <g transform="rotate(200 300 400)">
+    <line x1="300" y1="400" x2="300" y2="270" stroke="#c9a96a" stroke-width="0.8"/>
+    <line x1="300" y1="400" x2="300" y2="430" stroke="#c9a96a" stroke-width="0.8"/>
+    <circle cx="300" cy="290" r="2" fill="#c9a96a"/>
+  </g>
+
+  <circle cx="300" cy="400" r="5" fill="#c9a96a"/>
+  <circle cx="300" cy="400" r="2.2" fill="#0a0a0a"/>
+
+  <!-- Sapphire highlight -->
+  <ellipse cx="245" cy="318" rx="58" ry="20" fill="#ffffff" opacity="0.07" transform="rotate(-25 245 318)"/>
+  <ellipse cx="362" cy="490" rx="20" ry="8" fill="#ffffff" opacity="0.05" transform="rotate(-25 362 490)"/>
+</svg>
