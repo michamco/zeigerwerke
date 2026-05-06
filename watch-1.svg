@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="600" height="800">
+  <defs>
+    <radialGradient id="caseGrad1" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#f5dcb6"/>
+      <stop offset="55%" stop-color="#d6a878"/>
+      <stop offset="100%" stop-color="#8a6442"/>
+    </radialGradient>
+    <radialGradient id="dialGrad1" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#fbf5ea"/>
+      <stop offset="80%" stop-color="#ebe1cd"/>
+      <stop offset="100%" stop-color="#c5b89c"/>
+    </radialGradient>
+    <linearGradient id="strap1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a2a1f"/>
+      <stop offset="50%" stop-color="#5d4530"/>
+      <stop offset="100%" stop-color="#2a1c12"/>
+    </linearGradient>
+    <linearGradient id="bezelHL" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff3d8" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#fff3d8" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="softShadow1" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+      <feOffset dx="0" dy="8" result="off"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.5"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Strap top -->
+  <path d="M230 40 Q230 80 250 130 L350 130 Q370 80 370 40 Z" fill="url(#strap1)"/>
+  <line x1="250" y1="60" x2="350" y2="60" stroke="#c9a96a" stroke-width="0.7" stroke-dasharray="3 3" opacity="0.5"/>
+  <line x1="248" y1="100" x2="352" y2="100" stroke="#c9a96a" stroke-width="0.7" stroke-dasharray="3 3" opacity="0.5"/>
+
+  <!-- Strap bottom -->
+  <path d="M230 760 Q230 720 250 670 L350 670 Q370 720 370 760 Z" fill="url(#strap1)"/>
+  <line x1="250" y1="740" x2="350" y2="740" stroke="#c9a96a" stroke-width="0.7" stroke-dasharray="3 3" opacity="0.5"/>
+  <line x1="248" y1="700" x2="352" y2="700" stroke="#c9a96a" stroke-width="0.7" stroke-dasharray="3 3" opacity="0.5"/>
+
+  <!-- Lugs -->
+  <path d="M225 130 Q225 160 240 175 L260 165 L255 130 Z" fill="url(#caseGrad1)"/>
+  <path d="M375 130 Q375 160 360 175 L340 165 L345 130 Z" fill="url(#caseGrad1)"/>
+  <path d="M225 670 Q225 640 240 625 L260 635 L255 670 Z" fill="url(#caseGrad1)"/>
+  <path d="M375 670 Q375 640 360 625 L340 635 L345 670 Z" fill="url(#caseGrad1)"/>
+
+  <!-- Crown -->
+  <rect x="430" y="385" width="22" height="30" rx="2" fill="url(#caseGrad1)"/>
+  <rect x="430" y="388" width="22" height="3" fill="#5d4530" opacity="0.4"/>
+  <rect x="430" y="396" width="22" height="3" fill="#5d4530" opacity="0.4"/>
+  <rect x="430" y="404" width="22" height="3" fill="#5d4530" opacity="0.4"/>
+
+  <!-- Case outer -->
+  <circle cx="300" cy="400" r="170" fill="url(#caseGrad1)" filter="url(#softShadow1)"/>
+  <!-- Bezel highlight -->
+  <circle cx="300" cy="400" r="170" fill="url(#bezelHL)"/>
+  <!-- Bezel inner ring -->
+  <circle cx="300" cy="400" r="155" fill="none" stroke="#8a6442" stroke-width="1" opacity="0.6"/>
+  <circle cx="300" cy="400" r="148" fill="none" stroke="#fff3d8" stroke-width="0.5" opacity="0.5"/>
+
+  <!-- Dial -->
+  <circle cx="300" cy="400" r="142" fill="url(#dialGrad1)"/>
+
+  <!-- Minute track -->
+  <g stroke="#8a6442" stroke-width="0.6" opacity="0.55">
+    <circle cx="300" cy="400" r="128" fill="none"/>
+  </g>
+
+  <!-- Hour markers - Roman numerals -->
+  <g font-family="Cormorant Garamond, Times New Roman, serif" font-style="italic" font-weight="400" fill="#3d2a18" text-anchor="middle">
+    <text x="300" y="285" font-size="22">XII</text>
+    <text x="406" y="408" font-size="22">III</text>
+    <text x="300" y="528" font-size="22">VI</text>
+    <text x="194" y="408" font-size="22">IX</text>
+    <text x="362" y="312" font-size="14" opacity="0.85">I</text>
+    <text x="395" y="345" font-size="14" opacity="0.85">II</text>
+    <text x="395" y="465" font-size="14" opacity="0.85">IV</text>
+    <text x="362" y="498" font-size="14" opacity="0.85">V</text>
+    <text x="240" y="498" font-size="14" opacity="0.85">VII</text>
+    <text x="207" y="465" font-size="14" opacity="0.85">VIII</text>
+    <text x="207" y="345" font-size="14" opacity="0.85">X</text>
+    <text x="240" y="312" font-size="14" opacity="0.85">XI</text>
+  </g>
+
+  <!-- Minute ticks -->
+  <g stroke="#3d2a18" stroke-width="0.4" opacity="0.5">
+    <g id="minTicks1">
+      <line x1="300" y1="265" x2="300" y2="270"/>
+    </g>
+  </g>
+
+  <!-- Subdial small seconds at 6 -->
+  <circle cx="300" cy="465" r="32" fill="none" stroke="#8a6442" stroke-width="0.5" opacity="0.6"/>
+  <g stroke="#3d2a18" stroke-width="0.4" opacity="0.6">
+    <line x1="300" y1="438" x2="300" y2="442"/>
+    <line x1="327" y1="465" x2="323" y2="465"/>
+    <line x1="300" y1="492" x2="300" y2="488"/>
+    <line x1="273" y1="465" x2="277" y2="465"/>
+  </g>
+  <text x="300" y="447" font-family="Cormorant Garamond, serif" font-size="6" fill="#8a6442" text-anchor="middle" opacity="0.7" letter-spacing="2">SECONDES</text>
+  <line x1="300" y1="465" x2="300" y2="445" stroke="#3d2a18" stroke-width="0.7"/>
+  <circle cx="300" cy="465" r="2" fill="#3d2a18"/>
+
+  <!-- Brand text on dial -->
+  <text x="300" y="345" font-family="Cormorant Garamond, serif" font-style="italic" font-weight="400" font-size="15" fill="#3d2a18" text-anchor="middle" letter-spacing="1.5">Zeigerwerke</text>
+  <text x="300" y="362" font-family="Inter Tight, sans-serif" font-size="5" fill="#8a6442" text-anchor="middle" letter-spacing="3">GENF · MANUFAKTUR</text>
+
+  <!-- Hands -->
+  <!-- hour hand pointing approximately at 10:10 -->
+  <g>
+    <line x1="300" y1="400" x2="232" y2="358" stroke="#3d2a18" stroke-width="3" stroke-linecap="round"/>
+    <line x1="300" y1="400" x2="232" y2="358" stroke="#fff3d8" stroke-width="0.8" stroke-linecap="round" opacity="0.4"/>
+  </g>
+  <!-- minute hand -->
+  <g>
+    <line x1="300" y1="400" x2="395" y2="312" stroke="#3d2a18" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="300" y1="400" x2="395" y2="312" stroke="#fff3d8" stroke-width="0.6" stroke-linecap="round" opacity="0.4"/>
+  </g>
+  <!-- center pin -->
+  <circle cx="300" cy="400" r="5" fill="#c9a96a"/>
+  <circle cx="300" cy="400" r="2.5" fill="#3d2a18"/>
+
+  <!-- Sapphire highlight -->
+  <ellipse cx="245" cy="320" rx="55" ry="20" fill="#ffffff" opacity="0.07" transform="rotate(-25 245 320)"/>
+</svg>
