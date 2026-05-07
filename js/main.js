@@ -227,8 +227,26 @@
   document.querySelectorAll('[data-fake-submit]').forEach(form => {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      flash('Vielen Dank — wir melden uns persönlich.');
+      const msg = form.dataset.fakeSubmitMessage || 'Vielen Dank — wir melden uns persönlich.';
+      flash(msg);
       form.reset();
+      // Reset upload label too
+      const upLabel = form.querySelector('.upload-label strong');
+      if (upLabel && upLabel.dataset.original) upLabel.textContent = upLabel.dataset.original;
+      // Scroll up so the user sees the toast and feels acknowledged
+      window.scrollTo({ top: form.getBoundingClientRect().top + window.scrollY - 120, behavior: 'smooth' });
+    });
+  });
+
+  /* ---------- File upload visual feedback ---------- */
+  document.querySelectorAll('.upload-zone input[type="file"]').forEach(inp => {
+    const label = inp.parentElement.querySelector('.upload-label strong');
+    if (label) label.dataset.original = label.textContent;
+    inp.addEventListener('change', () => {
+      if (!label) return;
+      const n = inp.files.length;
+      if (n === 0) { label.textContent = label.dataset.original; return; }
+      label.textContent = n === 1 ? '1 Foto ausgewählt ✓' : `${n} Fotos ausgewählt ✓`;
     });
   });
 
@@ -236,7 +254,7 @@
   document.querySelectorAll('.newsletter-form').forEach(form => {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      flash('Eingetragen. Bienvenue.');
+      flash('Eingetragen. Vielen Dank!');
       form.reset();
     });
   });
